@@ -1,0 +1,35 @@
+body{
+    background-color: #ccc;
+    margin-top: 15px;
+}
+
+.list{
+    list-style: none;
+}
+
+.container-style{
+    min-height: 6in;
+    width: 60%;
+}
+
+
+.conteudo{
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+
+.menu{
+    height: 80px;
+    background-color: #1b6d85;
+    top: 20px;
+}
+.times{
+    background-color: #F5FFFA;
+    -webkit-box-shadow: 6px 4px 24px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 4px 24px -1px rgba(0,0,0,0.75);
+    box-shadow: 6px 4px 24px -1px rgba(0,0,0,0.75);
+    border-radius: 13px;
+    width: 90%;
+    margin: auto;
+}

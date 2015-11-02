@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Robocode</title>
+        <link rel="stylesheet" href="../view/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../view/css/style.css">
+    </head>
+    <body>
+
+        <div class="container-fluid container-style ">
+            <div class="col-lg-12" id="menu">
+                <ul class="list-inline list-group-item menu">
+                    <li>
+                        <a href="../controller/ControllerHome.php" class="list-group-item">Equpes Cadastradas</a>
+                    </li>
+                    <li>
+                        <a href="../controller/ControllerCrud.php?&acao=Novo" class="list-group-item">Cadastro de Equpe</a>
+                    </li>
+                    <li>
+                        <a href="../controller/ControllerPerfil.php" class="list-group-item">Meu Perfíl</a>
+                    </li>
+                    <li>
+                        <a href="../controller/ControllerLogout.php" class="list-group-item">Sair</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-12 conteudo">
+                <form class="form" method="post" action="../controller/ControllerAcoes.php?&Acao={$opc}">
+                    <h2>{$acao}</h2>
+                    <table class='table-responsive table-hover table'>
+                        <tr>
+                            <td height="71" colspan="4"><label >Nome da Equipe</label>
+                                <input class="form-control" type="text" id="nomeEquipe" name="nomeEquipe" {if $opc != 'Inserir'}value="{$equipe->getNome()}"{/if} />
+                            </td>
+                        </tr>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td>Nome</td>
+                          <td>Matrícula</td>
+                          <td>E-Mail</td>
+                        </tr>
+                        <tr>
+                            <td><label >Capitão da Equipe</label></td>
+                            <td><input class="form-control" type="text" id="nomeCapitao" name="nomeCapitao" {if $opc != 'Inserir'} value="{$jogadores[0]->getNome_jogador()}" {/if} ></td>
+                            <td><input class="form-control" type="text" id="matriculaCapitao" name="matriculaCapitao" {if $opc != 'Inserir'} value="{$jogadores[0]->getMatricula_jogador()}" {/if}></td>
+                            <td><input class="form-control" type="text" id="emailCapitao" name="emailCapitao" {if $opc != 'Inserir'} value="{$jogadores[0]->getEmail_jogador()}" {/if}></td>
+                        </tr>
+                        <tr>
+                            <td><label >Primeiro Jogador da Equipe</label></td>
+                            <td><input class="form-control" type="text" id="nomePrimeiroJogador" name="nomePrimeiroJogador" {if $opc != 'Inserir'} value="{$jogadores[1]->getNome_jogador()}" {/if}></td>
+                            <td><input class="form-control" type="text" id="matriculaPrimeiroJogador" name="matriculaPrimeiroJogador" {if $opc != 'Inserir'} value="{$jogadores[1]->getMatricula_jogador()}" {/if}></td>
+                            <td><input class="form-control" type="text" id="emailPrimeiroJogador" name="emailPrimeiroJogador" {if $opc != 'Inserir'} value="{$jogadores[1]->getEmail_jogador()}" {/if}></td>
+                        </tr>
+                        <tr>
+                            <td><label >Segundo Jogador da Equipe</label></td>
+                            <td><input class="form-control" type="text" id="nomeSegundoJogador" name="nomeSegundoJogador" {if $opc != 'Inserir'} value="{$jogadores[2]->getNome_jogador()}" {/if}></td>
+                            <td><input class="form-control" type="text" id="matriculaSegundoJogador" name="matriculaSegundoJogador" {if $opc != 'Inserir'} value="{$jogadores[2]->getMatricula_jogador()}" {/if}></td>
+                            <td><input class="form-control" type="text" id="emailSegundoJogador" name="emailSegundoJogador" {if $opc != 'Inserir'} value="{$jogadores[2]->getEmail_jogador()}" {/if}></td>
+                        </tr>
+                        <tr>
+                            <td><label >Terceiro Jogador da Equipe</label></td>
+                            <td><input class="form-control" type="text" id="nomeTerceiroJogador" name="nomeTerceiroJogador" {if $opc != 'Inserir'} value="{$jogadores[3]->getNome_jogador()}" {/if}></td>
+                            <td><input class="form-control" type="text" id="matriculaTerceiroJogador" name="matriculaTerceiroJogador" {if $opc != 'Inserir'} value="{$jogadores[3]->getMatricula_jogador()}" {/if}></td>
+                            <td><input class="form-control" type="text" id="emailTerceiroJogador" name="emailTerceiroJogador" {if $opc != 'Inserir'} value="{$jogadores[3]->getEmail_jogador()}" {/if}></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><input type="submit" class="btn btn-primary" {if $opc == 'Inserir'}value="Cadastrar Nova Equipe" {else}value="Editar Equipe"{/if}></td>
+                        </tr>
+                    </table><hr>
+                    <br/>
+                    <input type="hidden" name="idTime" id="idTime" value="{$idTime}">;
+                </form>
+            </div>
+        </div> 
+    </body>
+</html>

@@ -1,0 +1,15 @@
+/* CSS Document */
+body{
+	background-color: #ccc;
+}
+.login{
+	background-color: #fff;
+	max-width: 30%;
+	margin-top: 12%;
+	border-radius: 13px;
+	border-style: groove;
+}
+
+.erro{
+    color: red;
+}
